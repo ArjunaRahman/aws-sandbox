@@ -54,6 +54,16 @@ Save the File
 Exit the File
 Exit back to *username*@*hostname*:~$
 
+sudo nano /etc/sudoers
+
+Example:	# User privilege specification
+root       ALL=(ALL:ALL)   ALL
+ciadmin	ALL=(ALL:ALL)	ALL
+labadmin	ALL=(ALL:ALL)   ALL
+apiadmin	ALL=(ALL:ALL)   ALL
+vncadmin	ALL=(ALL:ALL)   ALL
+
+
 sudo mkdir -p /dscdev
 sudo mkdir -p /dscdev/apps
 sudo mkdir -p /dscdev/logs

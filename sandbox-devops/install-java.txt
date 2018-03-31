@@ -7,7 +7,9 @@ sudo mkdir -p /dscdev/apps/java
 cd to downloaded tar
 
 sudo chmod a+x jdk-8u162-linux-x64.tar.gz
+
 sudo tar -xvzf jdk-8u162-linux-x64.tar.gz -C /dscdev/apps/java --strip-components=1
+
 sudo nano /etc/profile
 
 JAVA_HOME=/dscdev/apps/java/jre

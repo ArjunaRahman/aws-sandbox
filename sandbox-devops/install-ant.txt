@@ -1,27 +1,4 @@
-INSTALL JAVA..
-
-sudo chmod a+x jdk-8u162-linux-x64.tar.gz
-sudo tar -xvzf jdk-8u162-linux-x64.tar.gz -C /dscdev/apps/java --strip-components=1
-sudo nano /etc/profile
-
-JAVA_HOME=/dscdev/apps/java/jre
-PATH=$PATH:$HOME/bin:$JAVA_HOME/bin
-export JAVA_HOME
-export JRE_HOME
-export PATH
-
-source /etc/profile
-
-java -version
-	java version "1.8.0_162"
-Java(TM) SE Runtime Environment (build 1.8.0_162-b12)
-Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
-which java
-	/dscdev/apps/java/jre/bin/java
-echo $JAVA_HOME
-	/dscdev/apps/java/jre
-
-INSTALL ANT…..
+INSTALL ANT
 
 Move the desired Ant - apache-ant-1.10.2-bin.tar.gz to the desired folder*;
 
@@ -29,7 +6,9 @@ Move the desired Ant - apache-ant-1.10.2-bin.tar.gz to the desired folder*;
 
 cd desired folder*/
 sudo chmod a+x apache-ant-1.10.2-bin.tar.gz
+
 sudo tar -xvzf apache-ant-1.10.2-bin.tar.gz -C /dscdev/apps/ant --strip-components=1
+
 sudo nano /etc/profile.d/ant.sh
 
 export ANT_HOME=/dscdev/apps/ant
@@ -39,42 +18,3 @@ source /etc/profile
 ant -version
 
 Apache Ant(TM) version 1.10.2 compiled on February 3 2018
-
-INSTALL MAVEN…..
-
-Move the desired Apache Maven - apache-maven-3.5.2-bin.tar.gz to the desired folder*;
-
-	apache-maven-3.5.2-bin.tar.gz  
-
-cd desired folder*/
-sudo chmod a+x apache-maven-3.5.2-bin.tar.gz
-sudo tar -xvzf apache-maven-3.5.2-bin.tar.gz -C /dscdev/apps/maven --strip-components=1
-sudo nano /etc/profile.d/maven.sh
-
-export M2_HOME=/dscdev/apps/maven
-export PATH=${M2_HOME}/bin:${PATH}
-
-source /etc/profile
-mvn -V
-
-Apache Maven 3.5.2 (138edd61fd100ec658bfa2d307c43b76940a5d7d; 2017-10-18T02:58:13-05:00)
-Maven home: /dscdev/apps/maven
-Java version: 1.8.0_162, vendor: Oracle Corporation
-Java home: /dscdev/apps/java/jre
-Default locale: en_US, platform encoding: UTF-8
-OS name: "linux", version: "4.4.0-112-generic", arch: "amd64", family: "unix"
-[INFO] Scanning for projects...
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD FAILURE
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time: 0.157 s
-[INFO] Finished at: 2018-02-17T11:15:03-06:00
-[INFO] Final Memory: 10M/56M
-[INFO] ------------------------------------------------------------------------
-[ERROR] No goals have been specified for this build. You must specify a valid lifecycle phase or a goal in the format <plugin-prefix>:<goal> or <plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>. Available lifecycle phases are: validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy, pre-clean, clean, post-clean, pre-site, site, post-site, site-deploy. -> [Help 1]
-[ERROR] 
-[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-[ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR] 
-[ERROR] For more information about the errors and possible solutions, please read the following articles:
-[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/NoGoalSpecifiedException
