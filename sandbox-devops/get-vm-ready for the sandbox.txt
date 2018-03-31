@@ -1,0 +1,51 @@
+UPDATE the VM
+
+df -h
+
+sudo apt-get update && sudo apt-get upgrade -y
+
+sudo apt-get -y update
+sudo apt-get install -y software-properties-common
+sudo apt-add-repository -y ppa:ansible/ansible
+
+sudo apt-get -y update
+sudo apt-get install -y sudo wget --allow-unauthenticated
+sudo apt-get install -y python --allow-unauthenticated
+sudo apt-get install -y ansible --allow-unauthenticated
+
+Packages to install; sudo wget git iputils-ping net-tools less vim
+
+(for CLI only)
+sudo apt-get install lsb-core tree wget git iputils-ping net-tools less nano -y 
+
+sudo apt-get dist-upgrade -y 
+
+sudo apt autoremove -y 
+
+sudo reboot
+
+Login labadmin
+
+df -h 
+
+sudo apt-get purge openjdk-* 
+sudo mkdir -p /dscdev
+sudo mkdir -p /dscdev/apps
+sudo mkdir -p /dscdev/data
+sudo mkdir -p /dscdev/apps/java
+sudo mkdir -p /dscdev/apps/vmtools
+sudo mkdir -p /dscdev/apps/wum
+sudo mkdir -p /dscdev/apps/…..etc
+
+sudo adduser apimadmin   (ApimOfr1)
+sudo groupadd apimgrs
+sudo usermod -a -G apimgrs apimadmin - (sudo usermod -a -G group user)
+
+cd /dscdev
+sudo chown -R apimadmin:apimgrs apps/ logs/
+
+(for GUI)
+sudo apt-get install lsb-core lubuntu-desktop konsole gedit tree nautilus -y
+
+
+
