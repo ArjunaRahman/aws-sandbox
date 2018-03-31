@@ -1,22 +1,21 @@
-UPDATE the VM
+UPDATE the VM - sandbox-ci-srvr ssh ubuntu@34.216.21.241
+Private IP - 172.31.22.140
 
 df -h
 
-sudo apt-get update && sudo apt-get upgrade -y
+sudo apt-get -y update && sudo apt-get upgrade -y
 
-sudo apt-get -y update
 sudo apt-get install -y software-properties-common
 sudo apt-add-repository -y ppa:ansible/ansible
 
-sudo apt-get -y update
+sudo apt-get -y update && sudo apt-get upgrade -y
+
+Packages to install;
+
 sudo apt-get install -y sudo wget --allow-unauthenticated
 sudo apt-get install -y python --allow-unauthenticated
 sudo apt-get install -y ansible --allow-unauthenticated
-
-Packages to install; sudo wget git iputils-ping net-tools less vim
-
-(for CLI only)
-sudo apt-get install lsb-core tree wget git iputils-ping net-tools less nano -y 
+sudo apt-get install -y git lsb-core tree less nano iputils-ping net-tools less vim
 
 sudo apt-get dist-upgrade -y 
 
@@ -24,28 +23,44 @@ sudo apt autoremove -y
 
 sudo reboot
 
-Login labadmin
-
 df -h 
 
 sudo apt-get purge openjdk-* 
+
+sudo adduser ciadmin   (CiOfr1)
+sudo groupadd cimgrs
+sudo usermod -a -G cimgrs ciadmin - (sudo usermod -a -G group user)
+
+sudo adduser ubuntu --disabled-password
+sudo adduser ubuntu sudo
+
+sudo -s
+nano /etc/sudoers
+
+# Allow members of group sudo to execute any command
+%sudo   ALL=(ALL) NOPASSWD: ALL
+
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ubuntu@sandbox-ci-srvr:/home/*username*admin$ cd 
+
+mkdir -p .ssh
+nano .ssh/authorized_keys
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCswJhbv/UtGq39TKc1ZSOetYCo294o/KGvQebTOYxW3pb2ueshr6BlnX+Y7Ellbf5moMoReX6M9E+n6LYpPHPva+Jcw20WF1E8Mb1617bWvKA+FtQCPgS+UeaI8e5NpRD+bhq2kmSYGR1l2OCWQsyBjVG0HOnG+v3337Tm9hmY7cjf9Izwp5fqzhQhtTh5BY5wsKIq5NwbOx9hq5wVJ4GB6/RsfY7WkCIiOyhBK2JcZJ5pEToZUz0lNajGM5CA6cFImjT3+JsDUboz+oNAareOTc2y4vAdLgfGoSYL9VIlvQ01Io460y7b7bgvWzf8isX6tvlQFrMTSk1g22V+WBbz "Rahman_Steven@AKR-9NDXQF2.dsccorp.net"
+
+Save the File
+Exit the File
+Exit back to *username*@*hostname*:~$
+
 sudo mkdir -p /dscdev
 sudo mkdir -p /dscdev/apps
+sudo mkdir -p /dscdev/logs
 sudo mkdir -p /dscdev/data
 sudo mkdir -p /dscdev/apps/java
-sudo mkdir -p /dscdev/apps/vmtools
-sudo mkdir -p /dscdev/apps/wum
-sudo mkdir -p /dscdev/apps/…..etc
+sudo mkdir -p /dscdev/apps/...etc
 
-sudo adduser apimadmin   (ApimOfr1)
-sudo groupadd apimgrs
-sudo usermod -a -G apimgrs apimadmin - (sudo usermod -a -G group user)
-
-cd /dscdev
-sudo chown -R apimadmin:apimgrs apps/ logs/
-
-(for GUI)
-sudo apt-get install lsb-core lubuntu-desktop konsole gedit tree nautilus -y
-
+sudo chown -R ciadmin:cimgrs /dscdev/apps/ logs/ data/
 
 
