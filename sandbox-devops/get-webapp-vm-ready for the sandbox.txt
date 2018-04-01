@@ -31,7 +31,7 @@ df -h
 
 sudo apt-get purge openjdk-* 
 
-sudo adduser webadmin   (CiOfr1)
+sudo adduser webadmin   (WebOfr1)
 sudo groupadd webmgrs
 sudo usermod -a -G webmgrs webadmin - (sudo usermod -a -G group user)
 
@@ -47,12 +47,14 @@ nano /etc/sudoers
 To run a command as administrator (user "root"), use "sudo <command>".
 See "man sudo_root" for details.
 
-ubuntu@sandbox-ci-srvr:/home/*username*admin$ cd 
+ubuntu@sandbox-webapp-srvr:/home/*username*admin$ cd 
 
 mkdir -p .ssh
 nano .ssh/authorized_keys
 
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCswJhbv/UtGq39TKc1ZSOetYCo294o/KGvQebTOYxW3pb2ueshr6BlnX+Y7Ellbf5moMoReX6M9E+n6LYpPHPva+Jcw20WF1E8Mb1617bWvKA+FtQCPgS+UeaI8e5NpRD+bhq2kmSYGR1l2OCWQsyBjVG0HOnG+v3337Tm9hmY7cjf9Izwp5fqzhQhtTh5BY5wsKIq5NwbOx9hq5wVJ4GB6/RsfY7WkCIiOyhBK2JcZJ5pEToZUz0lNajGM5CA6cFImjT3+JsDUboz+oNAareOTc2y4vAdLgfGoSYL9VIlvQ01Io460y7b7bgvWzf8isX6tvlQFrMTSk1g22V+WBbz "Rahman_Steven@AKR-9NDXQF2.dsccorp.net"
+
+
 
 Save the File
 Exit the File
@@ -75,6 +77,8 @@ sudo mkdir -p /dscdev/data
 sudo mkdir -p /dscdev/apps/java
 sudo mkdir -p /dscdev/apps/...etc
 
-sudo chown -R ciadmin:cimgrs /dscdev/apps/ logs/ data/
+cd /dscdev
+
+sudo chown -R webadmin:webmgrs /dscdev/apps/ logs/ data/
 
 
