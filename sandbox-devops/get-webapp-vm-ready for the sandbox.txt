@@ -12,7 +12,6 @@ df -h
 sudo apt-get -y update && sudo apt-get upgrade -y
 
 sudo apt-get install -y software-properties-common
-sudo apt-add-repository -y ppa:ansible/ansible
 
 sudo apt-get -y update && sudo apt-get upgrade -y
 
@@ -20,8 +19,7 @@ Packages to install;
 
 sudo apt-get install -y sudo wget --allow-unauthenticated
 sudo apt-get install -y python --allow-unauthenticated
-sudo apt-get install -y ansible --allow-unauthenticated
-sudo apt-get install -y git lsb-core tree less nano iputils-ping net-tools less vim
+sudo apt-get install -y lsb-core tree less nano iputils-ping net-tools less vim
 
 sudo apt-get dist-upgrade -y 
 
@@ -33,9 +31,9 @@ df -h
 
 sudo apt-get purge openjdk-* 
 
-sudo adduser ciadmin   (CiOfr1)
-sudo groupadd cimgrs
-sudo usermod -a -G cimgrs ciadmin - (sudo usermod -a -G group user)
+sudo adduser webadmin   (CiOfr1)
+sudo groupadd webmgrs
+sudo usermod -a -G webmgrs webadmin - (sudo usermod -a -G group user)
 
 sudo adduser ubuntu --disabled-password
 sudo adduser ubuntu sudo
@@ -65,7 +63,7 @@ sudo nano /etc/sudoers
 Example:	# User privilege specification
 root       ALL=(ALL:ALL)   ALL
 ciadmin	ALL=(ALL:ALL)	ALL
-labadmin	ALL=(ALL:ALL)   ALL
+webadmin	ALL=(ALL:ALL)   ALL
 apiadmin	ALL=(ALL:ALL)   ALL
 vncadmin	ALL=(ALL:ALL)   ALL
 
