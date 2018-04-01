@@ -1,0 +1,86 @@
+UPDATE the VM - 
+
+sandbox-ci-srvr ssh ubuntu@34.216.21.241
+Private IP - 172.31.22.140
+
+sandbox-webapp-lab-srvr ssh ubuntu@54.213.224.70
+Private IP - 172.31.18.88
+
+sandbox-db-lab-srvr ssh ubuntu@34.211.246.197
+Private IP - 172.31.22.102
+
+df -h
+
+sudo apt-get -y update && sudo apt-get upgrade -y
+
+sudo apt-get install -y software-properties-common
+
+sudo apt-get -y update && sudo apt-get upgrade -y
+
+Packages to install;
+
+sudo apt-get install -y sudo wget --allow-unauthenticated
+sudo apt-get install -y python --allow-unauthenticated
+sudo apt-get install -y git lsb-core tree less nano iputils-ping net-tools less vim
+
+sudo apt-get dist-upgrade -y 
+
+sudo apt autoremove -y 
+
+sudo reboot
+
+df -h 
+
+sudo apt-get purge openjdk-* 
+
+sudo adduser dbadmin   (WebOfr1)
+sudo groupadd dbmgrs
+sudo usermod -a -G webmgrs webadmin - (sudo usermod -a -G group user)
+
+sudo adduser ubuntu --disabled-password
+sudo adduser ubuntu sudo
+
+sudo -s
+nano /etc/sudoers
+
+# Allow members of group sudo to execute any command
+%sudo   ALL=(ALL) NOPASSWD: ALL
+
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ubuntu@sandbox-db-lab-srvr:/home/*username*admin$ cd 
+
+mkdir -p .ssh
+nano .ssh/authorized_keys
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCswJhbv/UtGq39TKc1ZSOetYCo294o/KGvQebTOYxW3pb2ueshr6BlnX+Y7Ellbf5moMoReX6M9E+n6LYpPHPva+Jcw20WF1E8Mb1617bWvKA+FtQCPgS+UeaI8e5NpRD+bhq2kmSYGR1l2OCWQsyBjVG0HOnG+v3337Tm9hmY7cjf9Izwp5fqzhQhtTh5BY5wsKIq5NwbOx9hq5wVJ4GB6/RsfY7WkCIiOyhBK2JcZJ5pEToZUz0lNajGM5CA6cFImjT3+JsDUboz+oNAareOTc2y4vAdLgfGoSYL9VIlvQ01Io460y7b7bgvWzf8isX6tvlQFrMTSk1g22V+WBbz "Rahman_Steven@AKR-9NDXQF2.dsccorp.net"
+
+
+
+Save the File
+Exit the File
+Exit back to *username*@*hostname*:~$
+
+sudo nano /etc/sudoers
+
+Example:	# User privilege specification
+root       ALL=(ALL:ALL)   ALL
+ciadmin	ALL=(ALL:ALL)	ALL
+dbadmin	ALL=(ALL:ALL)   ALL
+apiadmin	ALL=(ALL:ALL)   ALL
+vncadmin	ALL=(ALL:ALL)   ALL
+
+
+sudo mkdir -p /dscdev
+sudo mkdir -p /dscdev/apps
+sudo mkdir -p /dscdev/logs
+sudo mkdir -p /dscdev/data
+sudo mkdir -p /dscdev/apps/java
+sudo mkdir -p /dscdev/apps/...etc
+
+cd /dscdev
+
+sudo chown -R dbadmin:dbmgrs /dscdev/apps/ logs/ data/
+
+
