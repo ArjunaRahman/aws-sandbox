@@ -33,9 +33,9 @@ df -h
 
 sudo apt-get purge openjdk-* 
 
-sudo adduser dbadmin   (WebOfr1)
+sudo adduser dbadmin   (DbOfr1)
 sudo groupadd dbmgrs
-sudo usermod -a -G webmgrs webadmin - (sudo usermod -a -G group user)
+sudo usermod -a -G dbmgrs dbadmin - (sudo usermod -a -G group user)
 
 sudo adduser ubuntu --disabled-password
 sudo adduser ubuntu sudo
